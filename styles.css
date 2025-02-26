@@ -1,0 +1,204 @@
+*{
+    background-color: #8ACE00;
+}
+
+@font-face {
+    font-family: 'font1';  /* Give your font a name */
+    src: url('Redaction50-Bold.ttf') format('truetype');  /* Replace with your .ttf file path */
+}
+
+@font-face {
+    font-family: 'font2';  /* Give your font a name */
+    src: url('Redaction50-Regular.ttf') format('truetype');  /* Replace with your .ttf file path */
+}
+
+.title{
+    font-size: 6vw;  /* Base size */
+    font-family: 'font1';  /* Updated font-family */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space: nowrap;  /* Prevents text from wrapping to multiple lines */
+}
+
+/* Media Queries for title size */
+@media screen and (max-width: 1200px) {
+    .title {
+        font-size: 6.5vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 6.4vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 6.6vw;
+    }
+}
+
+.name-containers {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    gap: 5%;
+    width: 60%;
+    justify-content: center;
+}
+
+.name-section {
+    flex: 1;
+    max-width: 300px;
+    height: 200px;
+    overflow-y: auto;
+    background-color: #8ACE00;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'font2';
+    position: relative;
+    text-align: center;
+}
+
+.name-section h3 {
+    background-color: #8ACE00;
+    margin-top: 0;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    border-bottom: none;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    text-align: center;
+}
+
+.name-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    background-color: #8ACE00;
+    z-index: 1;
+}
+
+.name-section div {
+    background-color: #8ACE00;
+    margin: 0;
+    position: relative;
+    z-index: 0;
+}
+
+.name-section p {
+    background-color: #8ACE00;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.instruction {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #8ACE00;
+    font-family: 'font2';
+}
+
+.input-container {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    white-space: nowrap; 
+    display: flex;       
+    align-items: center;  
+    gap: 10px;          
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    background-color: white;
+    font-family: 'font2';
+    min-width: 200px;   
+    flex-shrink: 1;     
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: white;
+    font-family: 'font2';
+    cursor: pointer;
+    flex-shrink: 0;      
+    white-space: nowrap; 
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+}
+
+@keyframes floatAround {
+    0% {
+        top: 50%;
+        left: 50%;
+    }
+    25% {
+        top: 20%;
+        left: 70%;
+    }
+    50% {
+        top: 70%;
+        left: 20%;
+    }
+    75% {
+        top: 30%;
+        left: 30%;
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+#image-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    text-align: center;
+    animation: floatAround 10s infinite ease-in-out;
+}
+
+#image {
+    width: 400px;
+    display: block;
+    position: relative;
+    margin: 0 auto; 
+}
+
+.floating-text {
+    font-family: 'font1';
+    font-size: 1.5vw;
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="title">YOUR NAME IS SO TYPICAL</div>
+        
+        <div class="name-containers">
+            <div class="name-section">
+                <h3>TYPICAL XX NAMES</h3>
+                <div>
+                    <p>Emma</p>
+                    <p>Olivia</p>
+                    <p>Sophia</p>
+                    <p>Ava</p>
+                    <p>Isabella</p>
+                    <p>Mia</p>
+                    <p>Amelia</p>
+                    <p>Charlotte</p>
+                    <p>Harper</p>
+                    <p>Evelyn</p>
+                    <p>Abigail</p>
+                    <p>Ella</p>
+                    <p>Scarlett</p>
+                    <p>Lily</p>
+                    <p>Grace</p>
+                </div>
+            </div>
+            
+            <div class="name-section">
+                <h3>TYPICAL XY NAMES</h3>
+                <div>
+                    <p>James</p>
+                    <p>William</p>
+                    <p>Benjamin</p>
+                    <p>Lucas</p>
+                    <p>Henry</p>
+                    <p>Alexander</p>
+                    <p>Michael</p>
+                    <p>Ethan</p>
+                    <p>Daniel</p>
+                    <p>Matthew</p>
+                    <p>Jack</p>
+                    <p>Noah</p>
+                    <p>Samuel</p>
+                    <p>Logan</p>
+                    <p>Jacob</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="instruction">ENTER ANY OF THE TYPICAL NAMES ABOVE</p>
+        
+        <div class="input-container">
+            <input type="text" id="sentence" placeholder="Enter a name">
+            <button onclick="checkSentence()">SEE</button>
+        </div>
+
+        <div class="overlay"></div>
+        <div id="image-container">
+            <div class="close-button">×</div>
+            <div class="floating-text">I BET THEY LOOK LIKE THIS</div>
+            <img id="image" src="" alt="Keyword Image">
+        </div>
+        
+        <script>
+            const maleNames = ["james", "william", "benjamin", "lucas", "henry", "alexander", "michael", 
+                              "ethan", "daniel", "matthew", "jack", "noah", "samuel", "logan", "jacob"];
+
+            function checkSentence() {
+                var input = document.getElementById("sentence").value.toLowerCase();
+                var image = document.getElementById("image");
+                var imageContainer = document.getElementById("image-container");
+                var overlay = document.querySelector(".overlay");
+                
+                imageContainer.style.display = "none";
+
+                if (maleNames.includes(input)) {
+                    const randomNum = Math.floor(Math.random() * 7) + 1;
+                    image.src = `xy-faces/xy${randomNum}.png`;
+                    imageContainer.style.display = "block";
+                    overlay.style.display = "block";
+                }
+            }
+
+            document.querySelector(".close-button").addEventListener("click", function() {
+                document.getElementById("image-container").style.display = "none";
+                document.querySelector(".overlay").style.display = "none";
+                document.getElementById("sentence").value = "";
+            });
+        </script>
+    </body>
+</html>
