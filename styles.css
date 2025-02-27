@@ -185,7 +185,7 @@ button {
     transform: translate(-50%, -50%);
     z-index: 999;
     text-align: center;
-    animation: floatAround 10s infinite ease-in-out;
+    animation: floatAround 20s infinite ease-in-out;
 }
 
 #image {

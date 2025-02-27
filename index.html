@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="title">YOUR NAME IS SO TYPICAL</div>
+        <div class="title">TYPICAL NAMES</div>
         
         <div class="name-containers">
             <div class="name-section">
@@ -72,6 +72,8 @@
         <script>
             const maleNames = ["james", "william", "benjamin", "lucas", "henry", "alexander", "michael", 
                               "ethan", "daniel", "matthew", "jack", "noah", "samuel", "logan", "jacob"];
+            const femaleNames = ["emma", "olivia", "sophia", "ava", "isabella", "mia", "amelia",
+                               "charlotte", "harper", "evelyn", "abigail", "ella", "scarlett", "lily", "grace"];
 
             function checkSentence() {
                 var input = document.getElementById("sentence").value.toLowerCase();
@@ -82,8 +84,13 @@
                 imageContainer.style.display = "none";
 
                 if (maleNames.includes(input)) {
-                    const randomNum = Math.floor(Math.random() * 7) + 1;
+                    const randomNum = Math.floor(Math.random() * 13) + 1;
                     image.src = `xy-faces/xy${randomNum}.png`;
+                    imageContainer.style.display = "block";
+                    overlay.style.display = "block";
+                } else if (femaleNames.includes(input)) {
+                    const randomNum = Math.floor(Math.random() * 13) + 1;
+                    image.src = `xx-faces/xx${randomNum}.png`;
                     imageContainer.style.display = "block";
                     overlay.style.display = "block";
                 }
