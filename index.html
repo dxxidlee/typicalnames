@@ -69,6 +69,10 @@
             <img id="image" src="" alt="Keyword Image">
         </div>
         
+        <div id="not-typical-message" style="display: none; text-align: center; margin-top: 20px; font-size: 18px; color: #333; font-family: 'font1';">
+            I GUESS THIS NAME IS NOT TYPICAL
+        </div>
+
         <script>
             const maleNames = ["james", "william", "benjamin", "lucas", "henry", "alexander", "michael", 
                               "ethan", "daniel", "matthew", "jack", "noah", "samuel", "logan", "jacob"];
@@ -80,8 +84,11 @@
                 var image = document.getElementById("image");
                 var imageContainer = document.getElementById("image-container");
                 var overlay = document.querySelector(".overlay");
+                var notTypicalMessage = document.getElementById("not-typical-message");
                 
                 imageContainer.style.display = "none";
+                notTypicalMessage.style.display = "none";
+                overlay.style.display = "none";
 
                 if (maleNames.includes(input)) {
                     const randomNum = Math.floor(Math.random() * 13) + 1;
@@ -93,6 +100,8 @@
                     image.src = `xx-faces/xx${randomNum}.png`;
                     imageContainer.style.display = "block";
                     overlay.style.display = "block";
+                } else if (input.trim() !== "") {
+                    notTypicalMessage.style.display = "block";
                 }
             }
 
@@ -100,6 +109,7 @@
                 document.getElementById("image-container").style.display = "none";
                 document.querySelector(".overlay").style.display = "none";
                 document.getElementById("sentence").value = "";
+                document.getElementById("not-typical-message").style.display = "none";
             });
         </script>
     </body>

@@ -3,30 +3,32 @@
 }
 
 @font-face {
-    font-family: 'font1';  /* Give your font a name */
-    src: url('Redaction50-Bold.ttf') format('truetype');  /* Replace with your .ttf file path */
+    font-family: 'font1'; 
+    src: url('Redaction50-Bold.ttf') format('truetype');  
 }
 
 @font-face {
-    font-family: 'font2';  /* Give your font a name */
-    src: url('Redaction50-Regular.ttf') format('truetype');  /* Replace with your .ttf file path */
+    font-family: 'font2'; 
+    src: url('Redaction50-Regular.ttf') format('truetype');  
 }
 
 .title{
-    font-size: 6vw;  /* Base size */
-    font-family: 'font1';  /* Updated font-family */
+    font-size: 6vw;  
+    font-family: 'font1';  
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    white-space: nowrap;  /* Prevents text from wrapping to multiple lines */
+    white-space: nowrap;  
 }
 
-/* Media Queries for title size */
 @media screen and (max-width: 1200px) {
     .title {
         font-size: 6.5vw;
+    }
+    .floating-text{
+        font-size: 10vw;
     }
 }
 
@@ -34,11 +36,17 @@
     .title {
         font-size: 6.4vw;
     }
+    .floating-text{
+        font-size: 20vw;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .title {
         font-size: 6.6vw;
+    }
+    .floating-text{
+        font-size: 30vw;
     }
 }
 
